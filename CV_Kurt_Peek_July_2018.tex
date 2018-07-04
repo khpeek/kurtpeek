@@ -1,0 +1,232 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\usepackage{footmisc}
+
+% moderncv themes
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+\newcommand\Colorhref[3][color1]{\href{#2}{\small\color{#1}#3}}
+
+% Make quote font not in italics
+\renewcommand*{\quotefont}{\large}
+
+% Make width of quote containing summary statement wider.
+\usepackage{etoolbox}
+\patchcmd{\recomputecvlengths}{%
+  \setlength{\quotewidth}{0.65\textwidth}%
+}{%
+  \setlength{\quotewidth}{0.8\textwidth}%
+}{}{}
+
+% character encoding
+%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+\usepackage{eurosym}
+%\usepackage{amsmath}
+
+% adjust the page margins
+%\usepackage[scale=0.75]{geometry}
+
+\usepackage[a4paper, left=25mm, top=25mm, right=25mm, bottom=25mm]{geometry}
+
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\maketitlenamewidth}{10cm}        % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% Code to include references, obtained from http://tex.stackexchange.com/questions/34881/references-section-in-a-cv
+% Define \cvdoublecolumn, which sets its arguments in two columns without any labels
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[0.75em]{}{%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+    }%
+}
+
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+
+%\setlength{\voffset}{-5mm}
+
+% personal data
+\firstname{Kurt}
+\familyname{Peek}
+\title{Curriculum Vitae}               % optional, remove the line if not wanted
+\address{535 Broderick St, Apt 6}{San Francisco, CA 94117}    
+%\phone{(617)~528-0930}
+\mobile{+1 (628) 225-8536}                     
+                      
+%\fax{+3~(456)~789~012}                        % optional, remove the line if not wanted
+\email{kurt.peek@gmail.com}                          % optional, remove the line if not wanted
+\homepage{www.kurtpeek.com}                    % optional, remove the line if not wanted
+%\extrainfo{additional information}            % optional, remove the line if not wanted
+%\photo[64pt][0.4pt]{picture}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+
+%\vspace{-5mm}
+
+\quote{Analytical software engineer with a strong background in mathematics and physics}                                 
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+\maketitle
+
+\vspace{-5mm}
+%\section{Objective}
+%\cvitem{}{A position in research, development, and/or engineering in which I can contribute my skills in mathematics and physics %towards advancing cutting-edge technology.}
+
+\section{Experience}
+\cventry{2018--present}{Software Engineer}{Cleolabs Inc}{}{}{
+\Colorhref{https://hicleo.com/}{Cleo} (formerly known as LUCY) provides support to expecting parents through a benefits package for family-forward employers. Our app guides women through pregnancy and allows them to consult our in-house team of experts and book support services. I contribute mainly to the app's Django backend and our internal dashboard tools.}
+\cventry{2016--2017}{Backend Engineer}{IperLane Inc}{}{}{
+IperLane (now part of \Colorhref{https://www.crowdstrike.com/}{Crowdstrike}) built a mobile device management (MDM) system which enabled organizations to protect sensitive data on their employees’ mobile devices. I was responsible for the server side of the platform and implemented access control rules and anomaly detection based on (anonymized) data from the devices' sensors.}
+
+%implementing rules to control access to corporate resources from containerized apps on employees' devices.}
+\cventry{2012--2016}{Geophysicist}{NAM B.V. (a Shell-ExxonMobil joint venture)}{}{}{Contributed to increasing the success rate of exploration drilling by screening prospects for anomalies on 3D seismic indicating the presence of hydrocarbons.}
+
+
+%\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
+%\subsection{Internships}
+\cventry{2008}{Intern}{Thales Netherlands B.V}{}{}{
+Simulated and analyzed novel digital signal processing algorithms to compensate for phase errors in the transmitted signal of frequency-modulated continuous-wave (FMCW) radars.}
+
+\cventry{2006}{Intern}{Stanford University}{}{}{Contributed to efforts to synthesize a thin film of a homolog of a high-T$_c$ superconductor.}
+
+\section{Education}
+\cventry{2011}{M.Sc., Applied Mathematics}{University of Twente}{}{}{Graduated from the Mathematical Systems \& Control Theory (MSCT) group. Coursework included numerical methods, scientific computing, time series analysis, and stochastics.}
+\cventry{2011}{M.Sc., Applied Physics}{University of Twente}{}{}{Graduated from the Complex Photonic Systems (COPS) group. Coursework included advanced optics, signal processing, quantum mechanics, and solid state physics.}  % arguments 3 to 6 can be left empty
+\cventry{2007}{B.Sc., Applied Physics}{University of Twente}{}{}{
+Taught seminars in mathematics and Matlab. Member of the varsity crew team and later captain of the varsity track team.}
+
+%\section{Master thesis}
+%\cvitem{title}{\emph{Title}}
+%\cvitem{supervisors}{Supervisors}
+%\cvitem{description}{Short thesis abstract}
+
+%\section{Languages}
+%\cvitemwithcomment{Language 1}{Skill level}{Comment}
+%\cvitemwithcomment{Language 2}{Skill level}{Comment}
+%\cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+
+
+
+\section{Skills}
+\cvlistitem{Extensive experience with Python for web development and RESTful APIs (Django, Flask), mathematical modeling, data analysis, and machine learning (NumPy, SciPy, pandas, scikit-learn), testing (unittest, Pytest), parsing (regular expressions, PyParsing), and web scraping (Scrapy)}
+\cvlistitem{Experience with relational (PostgreSQL), noSQL (RethinkDB), and in-memory (Redis) database systems and ORMs (Django ORM, SQLAlchemy)}
+\cvlistitem{Experience with microservices (Docker, RabbitMQ), continuous integration (Gitlab-CI, CircleCI), and cloud services (AWS, Heroku, Google Cloud, Aptible)}
+%\cvlistitem{Proficiency in C/C++}
+%\cvlistitem{Proficiency in Java and C/C++.}
+\cvlistitem{Experience in web design (HTML5/CSS3, Sass, Javascript (React, jQuery)) and UI frameworks (Bootstrap 4, Materialize)}
+\cvlistitem{Proficiency in mobile development with React Native}
+
+\section{Courses}
+%\cventry{2012}{Independent Activities Period (IAP)}{Massachusetts Institute of Technology}{}{}{Two-week course sponsored by the MIT Lincoln Laboratory on how to build a small radar system capable of ranging, Doppler detection, and Synthetic Aperture Radar (SAR) imaging.}
+\cventry{2017}{Algorithms}{Coursera (Stanford University)}{}{}{4-course specialization covering divide-and-conquer methods, graph algorithms, greedy algorithms, dynamic programming, and NP-complete problems.}
+\cventry{2016}{Machine Learning}{Coursera (Stanford University)}{}{}{Broad course on machine learning covering linear and logistic regression, neural networks, anomaly detection, and dimensionality reduction.}
+
+%\section{Languages}
+%\cvitemwithcomment{English}{Fluent}{Native language, having been born in the U.S.}
+%\cvitemwithcomment{Dutch}{Fluent}{Have lived in the Netherlands since the age of 10.}
+% \cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+%\section{Extracurriculars}
+%\cvitem{2007-2008}{Captain of the varsity track team.}
+%\cvitem{2002-2003}{Member of the lightweight varsity crew team.}
+%\cvitem{hobby 3}{Description}
+
+%\section{Award}
+%\cvitem{2002}{Sankar prize, awarded to the graduate of the Rijnlands Lyceum in Oegstgeest with the highest grades in mathematics, physics, and chemistry.}
+
+%\section{References}
+%\renewcommand{\listitemsymbol}{} % Changes the symbol used for lists
+%\cvlistdoubleitem{\textbf{Allard Mosk} \\ Professor of Nanophotonics \\ Utrecht University \\ Princetonplein 5 \\ 3584 CC Utrecht \\ +31 30 2537549 \\ \Colorhref{mailto:A.P.Mosk@uu.nl}{A.P.Mosk@uu.nl} \\ \emph{Formerly}: Professor of Complex Photonic Systems \\ University of Twente \\ Drienerlolaan 5 \\ 7522 NB Enschede}{\textbf{Jan Jaap van der Velde} \newline Principal Reservoir Geophysicist \newline NAM B.V. \newline Schepersmaat 2 \newline 9405 TA Assen \newline +31 592 363751 \newline \Colorhref{mailto:JanJaap.vanderVelde@shell.com}{JanJaap.vanderVelde@shell.com}}
+
+%\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+%\cvlistdoubleitem{Item 3}{}
+
+%\section{Computer skills}
+%\cvdoubleitem{}{\textbf{Allard Mosk}}{}{Jan Jaap van der Velde}
+%\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+
+
+%\section{References}
+%\cvdoublecolumn{column1}{column2}
+
+%\section{References}
+%\cvdoublecolumn{\cvreference{Nicolai Reshetikhin}
+%    {Department of Mathematics}
+%    {University of California}
+%    {Berkeley, CA 94720-3840}
+%    {}
+%    {reshetik@math.berkeley.edu}
+%    {510-643-6234}\\[1em]
+%}
+
+
+%\footnotetext{Equivalent GPAs are looked up from a table used by Utrecht University for its International Diploma Supplements, available at \Colorhref{http://students.uu.nl/en/practical-information/academic-policies-and-procedures/grade-point-average}{http://students.uu.nl/en/practical-information/academic-policies-and-procedures/grade-point-average}. [Accessed 5 September 2017].}
+
+%\Colorhref{http://students.uu.nl/en/files/uugpa-vertaaltabelpdf}{table}
+
+%\renewcommand{\listitemsymbol}{-~}            % change the symbol for lists
+
+
+
+% Publications from a BibTeX file without multibib\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% for BibTeX numerical labels
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                   % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}              % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}              % 'publications' is the name of a BibTeX file
+
+%\clearpage\end{CJK*}                         % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
