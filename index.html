@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kurt Peek's personal website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font: 400 15px Lato, sans-serif;
+        line-height: 1.8;
+        color: #818181;
+      }
+      h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #303030;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }  
+      .jumbotron {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("img/Kurt_ski_touring_clipped_resized_1800.png");
+        background-size: 100% auto;
+        background-position: center;
+        background-color: #444;
+        color: #fff;
+        padding: 100px 25px;
+        font-family: Montserrat, sans-serif;
+      }
+      img#profile-pic {
+        float: right;
+        margin: auto;
+        width: 300px;
+        height: auto;
+        border: 1px solid #eee;
+      }
+      img#code-pic {
+        float: left;
+        image-orientation: 90deg;
+        height: 270px;
+        width: auto;
+      }
+      .container-fluid {
+        padding: 60px 50px;
+      }
+      .container-fluid:nth-child(even) {
+        background-color: #f6f6f6;
+      }
+      /*
+      .bg-grey {
+      background-color: #f6f6f6;
+      }
+      */
+      .logo-small {
+        /*      color: #444;*/
+        font-size: 50px;
+      }
+      .logo {
+        /*      color: #444;*/
+        font-size: 200px;
+      }
+      .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+      }
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+      }
+      .carousel-control.right, .carousel-control.left {
+        background-image: none;
+        color: #444;
+      }
+      .carousel-indicators li {
+        border-color: #444;
+      }
+      .carousel-indicators li.active {
+        background-color: #444;
+      }
+      .item h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        font-weight: 400;
+        font-style: italic;
+        margin: 70px 0;
+      }
+      .item span {
+        font-style: normal;
+      }
+      .panel {
+        border: 1px solid #444; 
+        border-radius:0 !important;
+        transition: box-shadow 0.5s;
+      }
+      .panel:hover {
+        box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+      }
+      .panel-footer .btn:hover {
+        border: 1px solid #444;
+        background-color: #fff !important;
+        color: #444;
+      }
+      .panel-heading {
+        color: #fff !important;
+        background-color: #444 !important;
+        padding: 25px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      .panel-footer {
+        background-color: white !important;
+      }
+      .panel-footer h3 {
+        font-size: 32px;
+      }
+      .panel-footer h4 {
+        color: #aaa;
+        font-size: 14px;
+      }
+      .panel-footer .btn {
+        margin: 15px 0;
+        background-color: #444;
+        color: #fff;
+      }
+      .navbar {
+        margin-bottom: 0;
+        background-color: #444;
+        z-index: 9999;
+        border: 0;
+        font-size: 12px !important;
+        line-height: 1.42857143 !important;
+        letter-spacing: 4px;
+        border-radius: 0;
+        font-family: Montserrat, sans-serif;
+      }
+      .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+      }
+      .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #444 !important;
+        background-color: #fff !important;
+      }
+      .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+      }
+      footer .glyphicon {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #444;
+      }
+      .slideanim {visibility:hidden;}
+      .slide {
+        animation-name: slide;
+        -webkit-animation-name: slide;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
+      }
+      @keyframes slide {
+        0% {
+          opacity: 0;
+          transform: translateY(70%);
+        } 
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+      @-webkit-keyframes slide {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateY(70%);
+        } 
+        100% {
+          opacity: 1;
+          -webkit-transform: translateY(0%);
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .col-sm-4 {
+          text-align: center;
+          margin: 25px 0;
+        }
+        .btn-lg {
+          width: 100%;
+          margin-bottom: 35px;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .logo {
+          font-size: 150px;
+        }
+      }
+      #SkypeButton_Call_kurt_peek_1_paraElement {
+        margin:0;
+      }
+      #SkypeButton_Call_kurt_peek_1_paraElement img {
+        margin:0 !important;
+        vertical-align:middle !important;
+      }
+      .table-borderless > tbody > tr > td,
+      .table-borderless > tbody > tr > th,
+      .table-borderless > tfoot > tr > td,
+      .table-borderless > tfoot > tr > th,
+      .table-borderless > thead > tr > td,
+      .table-borderless > thead > tr > th {
+        border: none;
+      }
+    </style>
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+      <p>Hi, I'm</p>
+      <h1>Kurt Peek</h1> 
+    </div>
+
+    <!-- Container (About Section) -->
+    <div id="about" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>About me</h2><br>
+          <h4>Software engineer with a background in mathematics and physics</h4><br>
+          <p>
+            I'm a Full-Stack Engineer at <a href="https://hicleo.com/">Cleo</a> (formerly LUCY), a maternity benefits company. Previously, I worked as a Backend Engineer at IperLane (now part of <a href="https://www.crowdstrike.com/">Crowdstrike</a>), a mobile device management (MDM) startup. I double-majored in mathematics and physics, and before my career change was a Geophysicist at Shell.</p>
+          <p>I'm interested in solving challenging problems, learning new technologies, and contributing to impactful products. In my free time, I enjoy (trail) running, hiking, skiing, working out, playing soccer and tennis, and reading.</p>
+        </div>
+        <div class="col-sm-4">
+          <img class="img-responsive img-rounded" id="profile-pic" src="img/Kurt_Charles_river_2.png">
+        </div>
+      </div>
+    </div>
+
+
+    <div id="skills" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4">
+          <img class="img-responsive img-rounded" id="code-pic" src="img/Code_DFS_clipped_smaller.png">
+        </div>
+        <div class="col-sm-8">
+          <h2>Skills</h2>
+          <p>
+            My core skills are:
+          <ul>
+            <li>Broad development knowledge, including Python, SQL databases, and microservices</li>
+            <li>Strong analytical skills and Computer Science fundamentals</li>
+            <li>Business sense and an eye for the big picture</li>
+          </ul>
+          Details on my qualifications can be found in my <a href="CV_Kurt_Peek.pdf">CV</a>. Check out my <a href="https://github.com/khpeek">Github</a> for some of my side projects.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Container (Contact Section) -->
+  <div id="contact" class="container-fluid bg-grey">
+    <h2 class="text-center">CONTACT</h2>
+    <div class="row">
+      <div class="col-sm-5">
+        <p>Let's get in touch.</p>
+        <table class="table table-condensed table-borderless font-weight-normal">
+          <tr>
+            <th><span class="glyphicon glyphicon-map-marker"></span></th>
+            <th>535 Broderick St, Apt 6, San Francisco, CA 94117</th>
+          </tr>
+          <tr>
+            <th><span class="glyphicon glyphicon-phone"></span></th>
+            <th>+1 (628) 225-8536</th>
+          </tr>
+          <tr>
+            <th><span class="glyphicon glyphicon-envelope"></span></th>
+            <th><a href="mailto:kurt.peek@gmail.com">kurt.peek@gmail.com</a></th>
+          </tr>
+          <tr>
+            <th><i class="fa fa-linkedin"></i></th>
+            <th><a href="https://www.linkedin.com/in/kurtpeek/">linkedin.com/in/kurtpeek</a></th>
+          </tr>
+          <tr>
+            <th><i class="fa fa-github"></i></th>
+            <th><a href="https://github.com/khpeek">github.com/khpeek</a></th>
+          </tr>
+        </table>
+      </div>
+
+      <form id="contactform" action="https://formspree.io/kurt.peek@gmail.com" method="POST">
+        <div class="col-sm-7 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
+          </div>
+          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="_next" value="confirmation.html" />
+        <input type="text" name="_gotcha" style="display:none" /> 
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Add Google Maps -->
+  <div id="googleMap" style="height:400px;width:100%;"></div>
+  <script>
+    function myMap() {
+      var myCenter = new google.maps.LatLng(37.7752668, -122.4419898);
+      var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var marker = new google.maps.Marker({position:myCenter});
+      marker.setMap(map);
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZOrQwopojhrGf9A1NHnPmBpZf6rWpoK8&callback=myMap"></script>
+
+  <footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+  </footer>
+
+  <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 500, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 800) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    })
+  </script>
+
+  </body>
+</html>
